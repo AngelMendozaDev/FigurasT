@@ -57,3 +57,8 @@ body::before{
 .login{
     display: none;
 }
+
+.error{
+    color: red;
+    border: 2px solid red;
+}

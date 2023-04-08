@@ -18,7 +18,8 @@
 <body>
 
     <div class="contenedor">
-        <div class="login">
+        <form class="login" method="post" onsubmit="return setLogin()" id="form-log">
+            <input type="text" name="action" value="L" hidden>
             <header>
                 <div class="rounded-circle">
                     <img src="resources/imgs/logo/logo.png" width="100%" alt="Logo DideñosDiferenciales">
@@ -37,7 +38,7 @@
                 <span class="input-group-text">
                     <i class="fa fa-user-circle" aria-hidden="true"></i>
                 </span>
-                <input type="email" placeholder="user@email.com" class="form-control" id="pass" name="user" maxlength="60" required>
+                <input type="email" placeholder="user@email.com" class="form-control" id="user" name="user" maxlength="60" required>
             </div>
             <div class="input-group mt-3">
                 <span class="input-group-text">
@@ -55,24 +56,34 @@
             <center>
                 <p>¿Aún no tienes una cuenta? <span id="regis" style="color: cyan; cursor:pointer;">REGISTRATE</span></p>
             </center>
-        </div>
-        <div class="register">
+        </form>
+
+        <form class="register" method="post" onsubmit="return setInfo()" id="form-reg">
+            <input type="text" name="action" value="R" hidden>
+            <header>
+                <div class="rounded-circle">
+                    <img src="resources/imgs/logo/logo.png" width="100%" alt="Logo DideñosDiferenciales">
+                </div>
+            </header>
+            <h4 class="subtitle-text">
+                Registro de usuarios
+            </h4>
             <div class="input-group mb-3">
                 <span class="input-group-text">Nombre(s):</span>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" class="form-control" required>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Apellidos:</span>
-                <input type="text" name="app" placeholder="Paterno" class="form-control">
-                <input type="text" name="apm" placeholder="Materno" class="form-control">
+                <input type="text" name="app" placeholder="Paterno" class="form-control" required>
+                <input type="text" name="apm" placeholder="Materno" class="form-control" required>
             </div>
             <div class="input-group mb-3">
-                <input type="email" id="mail" placeholder="Correo" class="form-control">
-                <input type="email" id="mail2" placeholder="Confirmación" name="mail" class="form-control">
+                <input type="email" id="mail" placeholder="Correo" class="form-control" required>
+                <input type="email" id="mail2" placeholder="Confirmación" name="mail" class="form-control" required>
             </div>
             <div class="input-group mb-3">
-                <input type="password" placeholder="Contaseña" id="pass" class="form-control">
-                <input type="password" placeholder="Confirmación" id="pass2" name="pass" class="form-control">
+                <input type="password" placeholder="Contaseña" id="pass1" class="form-control" required>
+                <input type="password" placeholder="Confirmación" id="pass2" name="pass" class="form-control" required>
             </div>
 
             <center>
@@ -80,9 +91,17 @@
                     Registrarme
                 </button>
             </center>
-        </div>
+            <br>
+            <center>
+                <p>¿Ya tienes una cuenta? <span id="logi" style="color: cyan; cursor:pointer;">INICIA SESIÓN</span></p>
+            </center>
+        </form>
     </div>
-
+    <script src="resources/libs/jquery.js"></script>
+    <script src="resources/libs/bootstrap_5/js/bootstrap.min.js"></script>
+    <script src="resources/libs/fontawesome/js/all.min.js"></script>
+    <script src="resources/libs/sweetalert.js"></script>
+    <script src="resources/js/login.js"></script>
 </body>
 
 </html>
