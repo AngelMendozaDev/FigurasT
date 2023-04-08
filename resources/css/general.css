@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'monse-regular';
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'monse-medium';
+    src: url('../fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'monse-bold';
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.title-text {
+    font-family: 'monse-bold';
+    text-align: center;
+}
+
+.subtitle-text {
+    font-family: 'monse-medium';
+    text-align: center;
+}
+
+.body-text {
+    text-align: justify;
+    font-family: 'monse-regular';
+}
+
+.body-text-c {
+    text-align: center;
+    font-family: 'monse-regular';
+}
+
+.line-s{
+    width: 80%;
+    max-width: 400px;
+    height: 5px;
+    background-color: brown;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    margin: auto;
+}
+
+.title-sep{
+    font-family: 'monse-bold';
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+}
+
+.rs-card a {
+    display: grid;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 37px;
+    padding-top: 2px;
+    color: #17181a;
+    align-self: center;
+    align-items: center;
+    vertical-align: middle;
+    margin: auto;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+#insta a:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+    color: #fff;
+    transition: all 0.5s;
+}
+
+#facebook a:hover {
+    background: #3b5998;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.card-galery {
+    width: 100%;
+    max-width: 25rem;
+    height: 30rem;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+}
+
+.card-galery img {
+    width: 100%;
+    max-width: 25rem;
+    height: 30rem;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #17181a;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'monse-regular';
+    padding: 10px;
+}
+
+footer .ops-foot {
+    list-style: none;
+    padding: 0;
+}
+
+footer img {
+    width: 150px;
+}
+
+.ops-foot {
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+
+.ops-foot li {
+    flex-grow: 1;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    margin: auto;
+}
+
+@media(max-width:700px) {
+    .rs-card a {
+        width: 80px;
+        height: 80px;
+        font-size: 78px;
+        border-radius: 10px;
+    }
+
+    .title-sep{
+        font-size: 30px;
+    }
+}

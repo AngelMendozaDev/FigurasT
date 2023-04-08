@@ -51,31 +51,32 @@ CREATE TABLE acabados(
 );
 
 CREATE TABLE presupuesto(
-    folio_pres int auto_increment not null,
+    folio_presupuesto int auto_increment not null,
     fecha_pres datetime default now(),
     usuario int not null,
-    medidas varchar(25) not null,
-    uso varchar(15) not null,
-    acabado int not null,
-    colores varchar(60) not null,
-    tipo_pintura int not null,
-    tipo_pieza int not null,
-    numero_pz int not null,
     foto varchar(20) not null,
-    comentarios mediumtext,
-    primary key(folio_pres),
-    foreign key(acabado) references acabados(id_acabado),
-    foreign key(usuario) references users(id_user)
+    medidas varchar(20) not null,
+    uso varchar(30) not null,
+    acabado int not null,
+    colores varchar(100) not null,
+    pintura varchar(30) not null,
+    tipo_pza varchar(30) not null,
+    cantidad int not null,
+    coment mediumtext not null,
+    primary key(folio_presupuesto),
+    foreign key(usuario) references users(id_user),
+    foreign key(acabado) references acabados(id_acabado)
 );
 
 CREATE TABLE figura(
     folio_fig int auto_increment not null,
+    orden int not null,
     nombre_f varchar(25) not null,
     fecha_entrega date not null,
-    medidas varchar(25) not null,
     foto varchar(20) not null,
     descripcion mediumtext,
-    primary key(folio_fig)
+    primary key(folio_fig),
+    foreign key(orden) references presupuesto(folio_presupuesto)
 );
 
 CREATE TABLE galery(
