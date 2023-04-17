@@ -47,6 +47,7 @@ function setInfo() {
       type: "POST",
       data: $("#form-reg").serialize(),
       success: function (response) {
+        console.log(response)
         if (response.trim() == 1) {
           swal("Registro exitoso!", "Inicia sesión", "success").then(
             (value) => {

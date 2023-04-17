@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_WARNING);
 class Control{
     public function conexion(){
         $host = "localhost";
@@ -19,7 +20,7 @@ class Control{
             if(self::existUser($_POST['mail']) == true)
                 return -1;
             $query = $conexion->prepare("CALL newClient(?,?,?,?,?,?)");
-            $query->bind_param("ssssss", $object['name'], $object['app'], $object['apm'], $phone, $object['mail'], $object['pass']);
+            $query->bind_param("ssssss", strtoupper($object['name']), strtoupper($object['app']), strtoupper($object['apm']), $phone, $object['mail'], $object['pass']);
             $res = $query->execute();
             
             $query->close();
