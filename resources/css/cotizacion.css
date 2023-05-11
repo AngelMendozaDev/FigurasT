@@ -1,0 +1,75 @@
+.campo {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.campo::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.groupT {
+    margin: auto;
+    width: 10rem;
+    height: 13rem;
+    text-align: center;
+}
+
+.groupT label{
+    display: block;
+    margin-bottom: -2px;
+}
+
+.img-box {
+    width: 9rem;
+    height: 9rem;
+    overflow: hidden;
+}
+
+.drag-area {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10px;
+    box-shadow: 3px 5px 8px #5c5c5c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 3px dashed #b0b1b1;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.drag-area img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: scale-down;
+}
+
+.drag-area .icon{
+    font-size: 25px;
+    color: #1565C0;
+}
+
+.groupC{
+    width: 80px;
+    padding: 2px;
+    text-align: center;
+    margin: auto;
+
+}
+
+.circle{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 40px;
+}
+
+.circle span{
+    color: #000;
+    font-size: 12px;
+}
+
