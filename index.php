@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseños diferenciales MX</title>
-    <link rel="icon" href="resources/imgs/logo/logo.png">
+    <title>.:Publivolumetricos:.</title>
+    <link rel="icon" href="resources/imgs/logo/Logo.png">
     <link rel="stylesheet" href="resources/libs/bootstrap_5/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="resources/css/menus.css">
@@ -17,9 +17,9 @@
 <body>
     <header class="menu-bar">
         <a href="index.php" class="section-left" style="text-decoration: none; color: #fff;">
-            <img src="resources/imgs/logo/logo.png" height="70px" alt="logo-m&m">
+            <img src="resources/imgs/logo/Logo.png" height="70px" alt="logo-m&m">
             &nbsp;
-            <span class="title-bar">DISEÑOS DIFERENCIALES MX</span>
+            <span class="title-bar">Publivolumetricos</span>
         </a>
         <div class="section-rigth">
             <ul class="options">
@@ -267,7 +267,7 @@
         <footer class="container-fluid pt-2 text-center border-top">
             <div class="row text-center">
                 <div class="col-12 col-md-3 my-auto">
-                    <img src="resources/imgs/logo/logo.png" alt="" width="100%">
+                    <img src="resources/imgs/logo/LogoTxt.png" alt="" width="100%">
                 </div>
                 <a href="https://goo.gl/maps/YBi143Dkhzczmei86" target="_blank" class="col-12 col-md-3 my-auto" style="color: #fff; text-decoration: none;">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
