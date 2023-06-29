@@ -4,7 +4,7 @@
         <h1 class="display-5 fw-normal">Bienvenido(a)</h1>
         <h1 class="display-6 fw-normal"><?php  echo $_SESSION['name']; ?></h1>
         <p class="lead fw-normal"></p>
-        <a class="btn btn-outline-info" href="cotizaciones.php">Mis cotizaciones.</a>
+        <a class="btn btn-outline-info" href="history.php">Mis cotizaciones.</a>
     </div>
 </div>
 

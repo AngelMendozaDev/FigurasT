@@ -27,6 +27,7 @@ function setLogin() {
     type: "POST",
     data: $("#form-log").serialize(),
     success: function (response) {
+      //console.log(response)
       if (response.trim() == 1) {
         window.location.href = "templates/user/inicio.php";
       } else {
@@ -47,7 +48,7 @@ function setInfo() {
       type: "POST",
       data: $("#form-reg").serialize(),
       success: function (response) {
-        console.log(response)
+        //console.log(response)
         if (response.trim() == 1) {
           swal("Registro exitoso!", "Inicia sesión", "success").then(
             (value) => {

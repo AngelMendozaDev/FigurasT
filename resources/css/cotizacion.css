@@ -1,3 +1,9 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 .campo {
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -73,3 +79,43 @@
     font-size: 12px;
 }
 
+.cont{
+    position: relative;
+}
+
+.icon{
+    font-size: 100px;
+}
+
+.group{
+    width: 50%;
+    text-align: center;
+    display: block;
+}
+
+#btn-closeC{
+    position: absolute;
+    right: 5px;
+    top: -45px;
+}
+
+.cont-horizontal{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-img{
+    width: 120px;
+    height: 120px;
+}
+
+.box-img img{
+    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.comment{
+    width: 100%;
+}

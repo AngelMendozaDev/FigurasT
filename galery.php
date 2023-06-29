@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="resources/css/menus.css">
     <link rel="stylesheet" href="resources/css/inicio.css">
     <link rel="stylesheet" href="resources/css/general.css">
+    <link rel="stylesheet" href="resources/css/gallery.css">
 </head>
 
 <body>
@@ -29,15 +30,15 @@
                     </a>
                 </li>
                 <li class="option">
-                    <a href="https://wa.me/+525564477055?text=perro" target="_blank">
+                    <a href="https://wa.me/+525562548492?text=Hola,%20requiero%20información" target="_blank">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        <span> 55 6447 7055</span>
+                        55 6254 8492
                     </a>
                 </li>
                 <li class="option">
-                    <a href="mailto:ing.Angel_mendoza@outlook.com">
+                    <a href="mailto:contacto@publivolumetricos.com">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <span>contacto@diseñosdifmx.com</span>
+                        <span>contacto@publivolumetricos.com</span>
                     </a>
                 </li>
                 <?php
@@ -65,6 +66,27 @@
             </ul>
         </div>
     </header>
+
+
+    <div class="container mt-3 mb-5">
+        <center>
+            <h1 class="display-5">
+                Algunos de nuestros diseños
+            </h1>
+
+            <hr width="70%">
+        </center>
+
+        <div class="gallery-container" id="lienzo">
+            <?php for ($i = 1; $i <= 21; $i++) { ?>
+                <div class="gallery__item">
+                    <img src="resources/imgs/Fig/<?php echo $i; ?>.jpg" alt="" class="gallery__img">
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+
+
     <main>
         <footer class="container-fluid pt-2 text-center border-top">
             <div class="row text-center">
@@ -90,9 +112,9 @@
                         </li>
                     </ul>
                 </div>
-                <a href="https://wa.me/+525564477055?text=I'm%20inquiring%20about%20the%20apartment%20listing" target="_blank" class="col-12 col-md-3 my-auto phone-text" style="font-size: 30px; color: #fff; text-decoration: none;">
+                <a href="https://wa.me/+525562548492?text=Hola,%20requiero%20información" target="_blank" class="col-12 col-md-3 my-auto phone-text" style="font-size: 30px; color: #fff; text-decoration: none;">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    55 3551 2583
+                    55 6254 8492
                 </a>
             </div>
         </footer>

@@ -38,7 +38,7 @@
                 <span class="input-group-text">
                     <i class="fa fa-user-circle" aria-hidden="true"></i>
                 </span>
-                <input type="email" placeholder="user@email.com" class="form-control" id="user" name="user" maxlength="60" required>
+                <input type="text" placeholder="Correo / Numero Telefonico" class="form-control" id="user" name="user" maxlength="60" required>
             </div>
             <div class="input-group mt-3">
                 <span class="input-group-text">
@@ -76,6 +76,12 @@
                 <span class="input-group-text">Apellidos:</span>
                 <input type="text" name="app" placeholder="Paterno" class="form-control" required>
                 <input type="text" name="apm" placeholder="Materno" class="form-control" required>
+            </div>
+            <div class="input-group mb-3">
+                <label for="" class="input-group-text">
+                    Teléfono:
+                </label>
+                <input type="numero" class="form-control" maxlength="12" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="phone" required>
             </div>
             <div class="input-group mb-3">
                 <input type="email" id="mail" placeholder="Correo" class="form-control" required>

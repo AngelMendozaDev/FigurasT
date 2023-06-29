@@ -29,15 +29,15 @@
                     </a>
                 </li>
                 <li class="option">
-                    <a href="https://wa.me/+525564477055?text=perro" target="_blank">
+                    <a href="https://wa.me/+525562548492?text=Hola,%20requiero%20información" target="_blank">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        <span> 55 6447 7055</span>
+                        55 6254 8492
                     </a>
                 </li>
                 <li class="option">
-                    <a href="mailto:ing.Angel_mendoza@outlook.com">
+                    <a href="mailto:contacto@publivolumetricos.com">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <span>contacto@diseñosdifmx.com</span>
+                        <span>contacto@publivolumetricos.com</span>
                     </a>
                 </li>
                 <?php
@@ -137,7 +137,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="img-box">
-                            <img src="resources/imgs/Fig/5.jpg" alt="">
+                            <img src="resources/imgs/Fig/work.jpg" alt="">
                         </div>
                     </div>
                     <div class="col-12 col-md-6 my-auto">
@@ -150,11 +150,13 @@
                             fabricante y pactar la fecha de entrega y envió, no te quedes
                             fuera, pide tu cotización ya mismo.
                         </p>
-                        <button class="btn btn-dark">
-                            Quiero una cotización
-                            &nbsp;
-                            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                        </button>
+                        <center>
+                            <button class="btn btn-dark">
+                                Quiero una cotización
+                                &nbsp;
+                                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                            </button>
+                        </center>
                     </div>
                 </div>
             </div>
@@ -206,6 +208,42 @@
             <div class="block-separador">
                 <div class="cont">
                     <div class="line-s"></div>
+                    <h1 class="title-sep">¿Necesitas ayuda?</h1>
+                </div>
+            </div>
+
+            <div class="template-contact mb-0">
+                <div class="form-box">
+                    <form action="controllers/contact.php" method="post">
+                        <label class="mt-3 form-label" for="">Nombre:</label>
+                        <input type="text" name="name" class="form-control" placeholder="Ej. Angel Mendoza" required>
+
+                        <label class="mt-3 form-label" for="">Correo electrónico:</label>
+                        <input type="email" name="email" class="form-control" placeholder="Ej. myMail@m&mu.com" required>
+
+                        <label class="mt-3 form-label" for="">Número telefonico:</label>
+                        <input type="text" name="phone" class="form-control" placeholder="Numero a 10 digitos" required>
+
+                        <label class="mt-3 form-label" for="">Cuéntanos que ocurre:</label>
+                        <textarea name="message" class="form-control" cols="30" rows="5" placeholder="Cuentanos que es lo que necesitas, nos comunicaremos tan pronto como podamos." required></textarea>
+
+                        <br>
+
+                        <center>
+                            <button class="btn btn-my-form">
+                                Enviar
+                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                        </center>
+
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="block-separador">
+                <div class="cont">
+                    <div class="line-s"></div>
                 </div>
             </div>
 
@@ -230,40 +268,7 @@
             </div>
         </div>
 
-        <div class="block-separador">
-            <div class="cont">
-                <div class="line-s"></div>
-                <h1 class="title-sep">¿Necesitas ayuda?</h1>
-            </div>
-        </div>
 
-        <div class="template-contact mb-0">
-            <div class="form-box">
-                <form action="controllers/contact.php" method="post">
-                    <label class="mt-3 form-label" for="">Nombre:</label>
-                    <input type="text" name="name" class="form-control" placeholder="Ej. Angel Mendoza" required>
-
-                    <label class="mt-3 form-label" for="">Correo electrónico:</label>
-                    <input type="email" name="email" class="form-control" placeholder="Ej. myMail@m&mu.com" required>
-
-                    <label class="mt-3 form-label" for="">Número telefonico:</label>
-                    <input type="text" name="phone" class="form-control" placeholder="Numero a 10 digitos" required>
-
-                    <label class="mt-3 form-label" for="">Cuéntanos que ocurre:</label>
-                    <textarea name="message" class="form-control" cols="30" rows="5" placeholder="Cuentanos que es lo que necesitas, nos comunicaremos tan pronto como podamos." required></textarea>
-
-                    <br>
-
-                    <center>
-                        <button class="btn btn-my-form">
-                            Enviar
-                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                        </button>
-                    </center>
-
-                </form>
-            </div>
-        </div>
         <footer class="container-fluid pt-2 text-center border-top">
             <div class="row text-center">
                 <div class="col-12 col-md-3 my-auto">
@@ -288,9 +293,9 @@
                         </li>
                     </ul>
                 </div>
-                <a href="https://wa.me/+525564477055?text=I'm%20inquiring%20about%20the%20apartment%20listing" target="_blank" class="col-12 col-md-3 my-auto phone-text" style="font-size: 30px; color: #fff; text-decoration: none;">
+                <a href="https://wa.me/+525562548492?text=Hola,%20requiero%20información" target="_blank" class="col-12 col-md-3 my-auto phone-text" style="font-size: 30px; color: #fff; text-decoration: none;">
                     <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    55 3551 2583
+                    55 6254 8492
                 </a>
             </div>
         </footer>

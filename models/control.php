@@ -14,13 +14,12 @@ class Control{
     }
 
     public function newUser($object){
-        $phone = "----";
         $conexion = self::conexion();
         if($conexion != null){
-            if(self::existUser($_POST['mail']) == true)
+            if(self::existUser($_POST['mail'], $_POST['phone']) == true)
                 return -1;
             $query = $conexion->prepare("CALL newClient(?,?,?,?,?,?)");
-            $query->bind_param("ssssss", strtoupper($object['name']), strtoupper($object['app']), strtoupper($object['apm']), $phone, $object['mail'], $object['pass']);
+            $query->bind_param("ssssss", strtoupper($object['name']), strtoupper($object['app']), strtoupper($object['apm']), $object['phone'], $object['mail'], $object['pass']);
             $res = $query->execute();
             
             $query->close();
@@ -29,10 +28,10 @@ class Control{
         }
     }
 
-    public function existUser($mail){
+    public function existUser($mail, $phone){
         $conexion = self::conexion();
-        $query = $conexion->prepare("SELECT id_user from users WHERE mail = ?");
-        $query->bind_param('s',$mail);
+        $query = $conexion->prepare("SELECT usuarios.ID_user from usuarios WHERE usuarios.mail = ? OR usuarios.telefono = ?");
+        $query->bind_param('ss',$mail, $phone);
         $query->execute();
         $res = $query->get_result();
         if($res->num_rows > 0){
@@ -43,15 +42,15 @@ class Control{
 
     public function login($user, $pass){
         $conexion = self::conexion();
-        $query = $conexion->prepare("SELECT p.id_person, p.nombre, p.app, u.tipo FROM person AS p INNER JOIN users AS u ON u.id_user = p.id_person WHERE u.mail = ? AND u.pass = ?");
-        $query->bind_param("ss",$user, $pass);
+        $query = $conexion->prepare("SELECT usuarios.ID_user, usuarios.nombre, usuarios.app, usuarios.tipo FROM usuarios WHERE usuarios.mail = ? OR usuarios.telefono = ? AND usuarios.pass = ?");
+        $query->bind_param("sss",$user,$user, $pass);
         $query->execute();
         $res = $query->get_result();
         $query->close();
 
         if($res->num_rows > 0){
             $res = $res->fetch_assoc();
-            $_SESSION['ID'] = $res['id_person'];
+            $_SESSION['ID'] = $res['ID_user'];
             $_SESSION['name'] = $res['nombre']." ".$res['app'];
             return 1;
         }

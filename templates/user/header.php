@@ -18,6 +18,8 @@ if (!isset($_SESSION['ID']))
     <link rel="stylesheet" href="../../resources/css/inicio.css">
     <link rel="stylesheet" href="../../resources/css/general.css">
     <link rel="stylesheet" href="../../resources/css/style.css">
+    <link rel="stylesheet" href="../../resources/libs/datatable/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../../resources/libs/datatable/css/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -37,10 +39,10 @@ if (!isset($_SESSION['ID']))
                 <a href="inicio.php"><span class="fa fa-home mr-3"></span> Inicio</a>
             </li>
             <li>
-                <a href="cotizaciones.php"><i class="fas fa-file-signature mr-3"></i> Mis Cotizaciones</a>
+                <a href="cotizaciones.php"><i class="fas fa-file-signature mr-3"></i> Generar Cotización</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-gift mr-3"></span> Gift Code</a>
+                <a href="history.php"><span class="fa fa-list mr-3"></span> Mis Cotizaciones</a>
             </li>
             <li>
                 <a href="#"><span class="fa fa-trophy mr-3"></span> Top Review</a>

@@ -25,7 +25,7 @@ body::before{
 
 .contenedor{
     width: 90%;
-    max-width: 400px;
+    max-width: 600px;
     padding: 10px;
     text-align: center;
     background-color: rgba(255,255,255,0.5);
@@ -61,4 +61,8 @@ body::before{
 .error{
     color: red;
     border: 2px solid red;
+}
+
+@media (max-width:700px){
+    
 }
