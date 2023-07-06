@@ -4,7 +4,7 @@ class Control{
     public function conexion(){
         $host = "localhost";
         $user = "root";
-        $pass = "LuisA5841@&";
+        $pass = "";
         $db = "figuras";
 
         $conexion = mysqli_connect($host, $user, $pass, $db);

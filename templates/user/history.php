@@ -6,20 +6,20 @@ $res = $model->getCotizaciones($_SESSION['ID']);
 ?>
 
 <style>
-    .v-align td {
-        vertical-align: middle;
-    }
+.v-align td {
+    vertical-align: middle;
+}
 
-    .img-content {
-        width: 100px;
-        height: 100px;
-    }
+.img-content {
+    width: 100px;
+    height: 100px;
+}
 
-    .img-content img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-    }
+.img-content img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
 </style>
 
 <div class="container mt-3 mb-3">
@@ -34,7 +34,7 @@ $res = $model->getCotizaciones($_SESSION['ID']);
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col-12table-cont">
+        <div class="col-12 table-cont">
             <table class="table table-hover table-bordered table responsive" id="tabla">
                 <thead class="table-primary">
                     <tr class="text-center">
@@ -48,24 +48,47 @@ $res = $model->getCotizaciones($_SESSION['ID']);
                 </thead>
                 <tbody>
                     <?php while ($item = $res->fetch_assoc()) { ?>
-                        <tr class="text-center v-align">
-                            <td><?php echo $item['folio_pres']; ?></td>
-                            <td><?php echo $item['fecha_pres']; ?></td>
-                            <td class="img-content">
-                                <img src="../../resources/imgs/cotiza/<?php echo $item['folio_pres']; ?>.jpeg" alt="Imagen Bajada por limpieza">
-                            </td>
-                            <td><?php echo $item['piezas']; ?></td>
-                            <td><?php echo $item['precio']; ?></td>
-                            <td>
-                                <button class="btn btn-primary btn-small" data-bs-toggle="modal" data-bs-target="#modalImage" onclick="setImage('<?php echo $item['folio_pres'] ?>')">
-                                    <i class="fa fa-image" aria-hidden="true"></i>
-                                </button>
+                    <tr class="text-center v-align">
+                        <td><?php echo $item['folio_pres']; ?></td>
+                        <td><?php echo $item['fecha_pres']; ?></td>
+                        <td class="img-content">
+                            <img src="../../resources/imgs/cotiza/<?php echo $item['folio_pres']; ?>.jpeg"
+                                alt="Imagen de referencia no disponible">
+                        </td>
+                        <td><?php echo $item['piezas']; ?></td>
+                        <td> $ <?php echo number_format($item['precio'], 2, '.', ','); ?></td>
+                        <td>
 
-                                <a class="btn btn-outline-danger btn-small" href="cotizacion.php?user=<?php echo $item['folio_pres']; ?>" target="_blank">
-                                    <i class="fas fa-file-pdf"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        <?php if($item['precio'] != '0.00'){ ?>
+                            <!--d-block mb-1
+d-block mb-1
+d-block mb-1-->
+                            <a class="btn btn-warning btn-small"
+                                href="#" target="_blank">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            <a class="btn btn-success btn-small"
+                                href="#" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a class="btn btn-outline-danger btn-small"
+                                href="cotizacion.php?user=<?php echo $item['folio_pres']; ?>" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                            </a>
+                            <?php } else{ ?>
+                            <button class="btn btn-primary btn-small" data-bs-toggle="modal"
+                                data-bs-target="#modalImage" onclick="setImage('<?php echo $item['folio_pres'] ?>')">
+                                <i class="fa fa-image" aria-hidden="true"></i>
+                            </button>
+                            <a class="btn btn-outline-danger btn-small"
+                                href="cotizacion.php?user=<?php echo $item['folio_pres']; ?>" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                            </a>
+                            <?php } ?>
+
+                            
+                        </td>
+                    </tr>
                     <?php } ?>
                 </tbody>
             </table>

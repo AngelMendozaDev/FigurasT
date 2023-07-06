@@ -148,4 +148,8 @@ footer img {
     .title-sep{
         font-size: 30px;
     }
+
+    .table-cont{
+        overflow-x: scroll;
+    }
 }

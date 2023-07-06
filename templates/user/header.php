@@ -45,16 +45,16 @@ if (!isset($_SESSION['ID']))
                 <a href="history.php"><span class="fa fa-list mr-3"></span> Mis Cotizaciones</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-trophy mr-3"></span> Top Review</a>
+                <a href="#"><span class="fa fa-trophy mr-3"></span> Mis Pedidos</a>
             </li>
-            <li>
+            <!--li>
                 <a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
+            <li-->
+            <li>
+                <a href="#"><span class="fas fa-headset mr-3"></span> Soporte Técnico</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-support mr-3"></span> Support</a>
-            </li>
-            <li>
-                <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+                <a href="#"><span class="fa fa-sign-out mr-3"></span> Cerrar Sesión</a>
             </li>
         </ul>
     </nav>

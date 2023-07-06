@@ -16,3 +16,21 @@ begin
 	insert into usuarios(usuarios.nombre, usuarios.app, usuarios.apm, usuarios.mail, usuarios.telefono, usuarios.pass, usuarios.tipo, usuarios.fecha) values(nombre_c, app_c, apm_c, mail_c, phone_c, pass_c, '2', DATE(NOW()));
 end
 $
+
+DELIMITER $
+CREATE PROCEDURE newPresupuesto(
+	in sol int,
+    in med varchar(25),
+    in pos char(1),
+    in tipo varchar(90),
+    in aca varchar(30),
+    in pin varchar(30),
+    in pz int,
+    in price decimal(7,2),
+    in com mediumtext
+)
+begin
+	INSERT INTO presupuestos (solicito, medidas, posicion, tipo_uso, acabado, pintura, piezas, precio, comentarios) VALUES
+    (sol, med, pos, tipo, aca, pin, pz, price, com);
+end
+$
