@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.:Publivolumetricos:.</title>
-    <link rel="icon" href="resources/imgs/logo/Logo.png">
+    <link rel="icon" href="resources/imgs/logo/logo.png">
     <link rel="stylesheet" href="resources/libs/bootstrap_5/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="resources/css/menus.css">
@@ -17,7 +17,7 @@
 <body>
     <header class="menu-bar">
         <a href="index.php" class="section-left" style="text-decoration: none; color: #fff;">
-            <img src="resources/imgs/logo/Logo.png" height="70px" alt="logo-m&m">
+            <img src="resources/imgs/logo/logo.png" height="70px" alt="logo-m&m">
             &nbsp;
             <span class="title-bar">Publivolumetricos</span>
         </a>
@@ -65,6 +65,88 @@
             </ul>
         </div>
     </header>
+
+    <div class="sidebar">
+        <div class="cont-btn">
+            <input type="checkbox" id="status-menu" hidden>
+            <label for="status-menu" class="btn btn-small btn-info">
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+        <div class="head-side">
+            <br>
+            <center>
+                <h1 class="frase">
+                    Publivolumetricos
+                </h1>
+            </center>
+            <br>
+        </div>
+        <hr>
+        <div class="side-body">
+            <ul class="nav-menu">
+                <li class="option-menu">
+                    <a href="index.php">
+                        <i class="fas fa-home"></i>
+                        &nbsp;
+                        Inicio
+                    </a>
+                </li>
+                <li class="option-menu">
+                    <a href="galery.php">
+                        Galeria
+                    </a>
+                </li>
+
+                <li class="option-menu">
+                    <a href="https://wa.me/+525562548492?text=Hola,%20requiero%20información" target="_blank">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        55 6254 8492
+                    </a>
+                </li>
+                <li class="option-menu">
+                    <a href="mailto:contacto@publivolumetricos.com" style="font-size: 18px;">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>contacto@publivolumetricos.com</span>
+                    </a>
+                </li>
+
+                <?php
+                if (!isset($_SESSION['ID'])) {
+                ?>
+                    <li class="option">
+                        <a href="login.php">
+                            INICIA SESION
+                        </a>
+                    </li>
+                <?php } else { ?>
+                    <li class="option" id="btn-down">
+
+                        NAME USER
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+                        <ul class="sub-menu" id="sub-menu">
+                            <li><a class="dropdown-item" href="#">PERFIL</a></li>
+                            <li><a class="dropdown-item" href="#">CONFIGURACIÓN</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="#">CERRAR SESIÓN</a></li>
+                        </ul>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+        <hr>
+        <div class="foot-side">
+            <p class="texto my-auto">
+                Power By 
+                <a href="https://lumega-mx.com" target="_blank ">
+                    LUMEGA-MX
+                </a>
+            </p>
+        </div>
+    </div>
+
+
     <main>
 
         <div class="container-fluid py-4">
@@ -151,11 +233,11 @@
                             fuera, pide tu cotización ya mismo.
                         </p>
                         <center>
-                            <button class="btn btn-dark">
+                            <a href="login.php" class="btn btn-dark">
                                 Quiero una cotización
                                 &nbsp;
                                 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                            </button>
+                            </a>
                         </center>
                     </div>
                 </div>
@@ -274,10 +356,10 @@
                 <div class="col-12 col-md-3 my-auto">
                     <img src="resources/imgs/logo/LogoTxt.png" alt="" width="100%">
                 </div>
-                <a href="https://goo.gl/maps/YBi143Dkhzczmei86" target="_blank" class="col-12 col-md-3 my-auto" style="color: #fff; text-decoration: none;">
+                <a href="https://goo.gl/maps/p7MJd9DrCETjpGCt6" target="_blank" class="col-12 col-md-3 my-auto" style="color: #fff; text-decoration: none;">
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     &nbsp;
-                    San Miguel Zapotitla, 13310, Tlahuac, CDMX.
+                    1ra Priv. San Antonio 90, San Antonio, Iztapalapa, 09900 Ciudad de México, CDMX
                 </a>
                 <div class="col-12 col-md-3 my-auto">
                     <ul class="ops-foot my-auto mt-2 mb-2">
@@ -287,7 +369,7 @@
                             </a>
                         </li>
                         <li class="rs-card" id="insta">
-                            <a href="">
+                            <a href="https://www.instagram.com/publivolumetricos/" target="_blank">
                                 <i class="fab fa-instagram" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -300,6 +382,12 @@
             </div>
         </footer>
     </main>
+
+
+    <script src="resources/libs/jquery.js"></script>
+    <script src="resources/libs/bootstrap_5/js/bootstrap.min.js"></script>
+    <script src="resources/js/general.js"></script>
+
 </body>
 
 </html>

@@ -3,6 +3,8 @@ require_once "header.php";
 require_once "../../models/Cotiza.php";
 $model = new Cotiza();
 $res = $model->getCotizaciones($_SESSION['ID']);
+$ext = array('png', 'jpeg', 'jpg');
+$flag = false;
 ?>
 
 <style>
@@ -52,24 +54,40 @@ $res = $model->getCotizaciones($_SESSION['ID']);
                         <td><?php echo $item['folio_pres']; ?></td>
                         <td><?php echo $item['fecha_pres']; ?></td>
                         <td class="img-content">
-                            <img src="../../resources/imgs/cotiza/<?php echo $item['folio_pres']; ?>.jpeg"
-                                alt="Imagen de referencia no disponible">
+                            <?php
+                            $nombre_fichero = '../../resources/imgs/cotiza/' . $item['folio_pres'];
+
+                            for($i = 0; $i < count($ext); $i++){
+                                if (file_exists($nombre_fichero  . '.' .$ext[$i])) {
+                                    $nombre_fichero = '../../resources/imgs/cotiza/' . $item['folio_pres']. '.' . $ext[$i];
+                                    $img = $item['folio_pres']. '.' . $ext[$i];
+                                    $flag = true;
+                                    break;
+                                }
+                            }
+
+                            if($flag == false){
+                                $nombre_fichero = '../../resources/imgs/cotiza/noImage.png';
+                                $img = 'noImage.png';
+                            }
+
+                            $flag = false;
+                            ?>
+                            <img src="<?php echo $nombre_fichero;?>" alt="Imagen de referencia no disponible">
                         </td>
                         <td><?php echo $item['piezas']; ?></td>
                         <td> $ <?php echo number_format($item['precio'], 2, '.', ','); ?></td>
                         <td>
 
-                        <?php if($item['precio'] != '0.00'){ ?>
+                            <?php if($item['precio'] != '0.00'){ ?>
                             <!--d-block mb-1
 d-block mb-1
 d-block mb-1-->
-                            <a class="btn btn-warning btn-small"
-                                href="#" target="_blank">
+                            <a class="btn btn-warning btn-small" href="#" target="_blank">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
-                            <a class="btn btn-success btn-small"
-                                href="#" target="_blank">
-                                <i class="fab fa-whatsapp"></i>
+                            <a class="btn btn-success btn-small" href="tel:+525564477055" target="_blank">
+                                <i class="fas fa-phone"></i>
                             </a>
                             <a class="btn btn-outline-danger btn-small"
                                 href="cotizacion.php?user=<?php echo $item['folio_pres']; ?>" target="_blank">
@@ -77,7 +95,7 @@ d-block mb-1-->
                             </a>
                             <?php } else{ ?>
                             <button class="btn btn-primary btn-small" data-bs-toggle="modal"
-                                data-bs-target="#modalImage" onclick="setImage('<?php echo $item['folio_pres'] ?>')">
+                                data-bs-target="#modalImage" onclick="setImage('<?php echo $img ?>')">
                                 <i class="fa fa-image" aria-hidden="true"></i>
                             </button>
                             <a class="btn btn-outline-danger btn-small"
@@ -86,7 +104,7 @@ d-block mb-1-->
                             </a>
                             <?php } ?>
 
-                            
+
                         </td>
                     </tr>
                     <?php } ?>
@@ -106,7 +124,7 @@ d-block mb-1-->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="" width="100%" id="foto">
+                <img src="" height="60%" width="100%" id="foto">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>

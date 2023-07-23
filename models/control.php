@@ -10,6 +10,8 @@ class Control{
         $conexion = mysqli_connect($host, $user, $pass, $db);
         if(!$conexion)
             return null;
+
+        mysqli_set_charset($conexion, "utf-8");
         return $conexion;
     }
 
@@ -42,17 +44,26 @@ class Control{
 
     public function login($user, $pass){
         $conexion = self::conexion();
-        $query = $conexion->prepare("SELECT usuarios.ID_user, usuarios.nombre, usuarios.app, usuarios.tipo FROM usuarios WHERE usuarios.mail = ? OR usuarios.telefono = ? AND usuarios.pass = ?");
-        $query->bind_param("sss",$user,$user, $pass);
+        $query = $conexion->prepare("SELECT usuarios.ID_user FROM usuarios WHERE usuarios.mail = ? OR usuarios.telefono = ?");
+        $query->bind_param("ss",$user,$user);
         $query->execute();
         $res = $query->get_result();
         $query->close();
 
         if($res->num_rows > 0){
             $res = $res->fetch_assoc();
-            $_SESSION['ID'] = $res['ID_user'];
-            $_SESSION['name'] = $res['nombre']." ".$res['app'];
-            return 1;
+            $user = $res['ID_user'];
+            $query = $conexion->prepare("SELECT usuarios.ID_user, usuarios.nombre, usuarios.app, usuarios.tipo FROM usuarios WHERE usuarios.ID_user = ? AND usuarios.pass = ?");
+            $query->bind_param("ss",$user, $pass);
+            $query->execute();
+            $res = $query->get_result();
+            $query->close();
+            if($res->num_rows > 0){
+                $res = $res->fetch_assoc();
+                $_SESSION['ID'] = $res['ID_user'];
+                $_SESSION['name'] = $res['nombre']." ".$res['app'];
+                return 1;
+            }
         }
         return 0;
     }

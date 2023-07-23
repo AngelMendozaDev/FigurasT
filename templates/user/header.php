@@ -54,7 +54,7 @@ if (!isset($_SESSION['ID']))
                 <a href="#"><span class="fas fa-headset mr-3"></span> Soporte Técnico</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-sign-out mr-3"></span> Cerrar Sesión</a>
+                <a href="../../controllers/close.php"><span class="fa fa-sign-out mr-3"></span> Cerrar Sesión</a>
             </li>
         </ul>
     </nav>

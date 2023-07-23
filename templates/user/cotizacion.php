@@ -4,6 +4,8 @@ require_once('../../models/Cotiza.php');
 $model = new Cotiza();
 
 $res = $model->getCotizacin($_GET['user'])->fetch_assoc();
+$ext = array('png', 'jpeg', 'jpg');
+$flag = false;
 
 class PDF extends FPDF
 {
@@ -71,15 +73,25 @@ $pdf->MultiCell(100, 5, " PubliVolumetricos S.A de C.V. \n San Miguel Zapotitla,
 $pdf->SetFont('Arial', 'B', 14);
 $pdf->SetFillColor(172,209,234);
 
-$nombre_fichero = '../../resources/imgs/cotiza/'.$res['folio_pres'].'.jpeg';
+$nombre_fichero = '../../resources/imgs/cotiza/' . $res['folio_pres'];
 $leyenda = '[Imagen de Referencia]';
 
-if (!file_exists($nombre_fichero)) {
+for($i = 0; $i < count($ext); $i++){
+    //$pdf->Cell(30,5, $nombre_fichero . '.' .$ext[$i], 0,1,'C');
+    if (file_exists($nombre_fichero . '.' .$ext[$i])) {
+        $nombre_fichero = '../../resources/imgs/cotiza/' . $res['folio_pres']. '.' . $ext[$i];
+        $flag = true;
+    }    
+}
+
+if($flag == false){
     $nombre_fichero = '../../resources/imgs/cotiza/noImage.png';
     $leyenda = '[Imagen de referencia no disponible]';
 }
 
-$pdf->Image($nombre_fichero, 111, 90,90);
+
+
+$pdf->Image($nombre_fichero, 111, 95,90);
 $pdf->Ln(10);
 $pdf->Cell(23,8, 'Solicito:', 1,0, 'L', 1);
 $pdf->Cell(168,8, $res['nombre']." ".$res['app']. " ". $res['apm'], 1,0,'C');
@@ -147,6 +159,6 @@ $pdf->Cell(30,8, 'Precio Final:',1,0,'C',1);
 $pdf->SetFont('Arial', 'B', 16);
 $pdf->Cell(65,8, "$ " . $res['piezas'] * $res['precio'],1,1,'C',0);
 
-//$pdf->Output();
+$pdf->Output();
 
-$pdf->Output('D', 'Cotizacion_'.$res['nombre']."_".$res['app'].".pdf");
+//$pdf->Output('D', 'Cotizacion_'.$res['nombre']."_".$res['app'].".pdf");

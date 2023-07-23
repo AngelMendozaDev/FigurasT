@@ -133,7 +133,81 @@
 }
 
 
-@media(max-width:700px){
+
+/*************************************
+* SIDEBBAR PHONE
+**************************************************/
+
+.sidebar{
+    display: none;
+    position: fixed;
+    top: 0px;
+    width: 350px;
+    z-index: 2;
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.5s;
+    padding: 50px 20px;
+    margin-left: -350px;
+    box-shadow: 5px 3px 5px rgba(0,0,0,0.5);
+}
+
+.active{
+    margin-left: 0px;
+    transition: all 0.5s;
+}
+
+.cont-btn{
+    position: relative;
+    width: 100%;
+}
+
+.cont-btn label{
+    display: none;
+    position: absolute;
+    right: -55px;
+    top: 4vh;
+}
+
+
+.side-head h1{
+    width: 100%;
+}
+
+.side-body{
+    height: 70%;
+}
+
+.nav-menu{
+    list-style: none;
+    padding: 20px 0px;
+    text-align: left;
+}
+
+.nav-menu li{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.nav-menu li a{
+    text-decoration: none;
+    font-family: 'monse-regular';
+    font-size: 20px;
+    color: #000;
+}
+
+.foot-side{
+    height: 5%;
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+@media(max-width:800px){
     .section-rigth{
         display: none;
     }
@@ -151,5 +225,13 @@
     .section-left span{
         display: block;
         text-align: center;
+    }
+
+    .sidebar{
+        display: block;
+    }
+
+    .cont-btn label{
+        display: block;
     }
 }
