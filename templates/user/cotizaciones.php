@@ -39,8 +39,8 @@
                             <span class="button" style="font-weight: 700; cursor:pointer; color: #3498DB;">Busca en tu explorador</span>
                         </span>
                         <br>
-                        <input type="file" id="inp" name="img" hidden>
-                        <span class="support">Extenciones permitidas: JPG, JPEG, PNG</span>
+                        <input type="file" id="inp" name="img" accept="image/jpeg, image/jpg" hidden>
+                        <span class="support">Extenciones permitidas: JPG, JPEG</span>
                     </div>
                     <img class="imgs">
                 </div>

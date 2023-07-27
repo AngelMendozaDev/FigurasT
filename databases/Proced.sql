@@ -34,3 +34,15 @@ begin
     (sol, med, pos, tipo, aca, pin, pz, price, com);
 end
 $
+
+DELIMITER $
+CREATE PROCEDURE newDomicilio(
+    in us int,
+    in street varchar(80),
+    in clave int,
+    in ref varchar(160)
+)
+begin
+INSERT INTO domicilio (fk_user, calle, cp, referencia) VALUES (us,UPPER(street), clave, UPPER(ref));
+end
+$

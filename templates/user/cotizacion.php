@@ -91,7 +91,7 @@ if($flag == false){
 
 
 
-$pdf->Image($nombre_fichero, 111, 95,90);
+$pdf->Image($nombre_fichero, 111, 95, 90, 78);
 $pdf->Ln(10);
 $pdf->Cell(23,8, 'Solicito:', 1,0, 'L', 1);
 $pdf->Cell(168,8, $res['nombre']." ".$res['app']. " ". $res['apm'], 1,0,'C');
@@ -125,6 +125,7 @@ $pdf->Cell(16,8, $res['piezas'], 1,1,'C');
 $pdf->Ln(15);
 $pdf->Cell(24,8, 'Acabado:', 1,0,'L',1);
 $pdf->Cell(75,8, $res['acabado'], 1,1,'C');
+$pdf->Ln(10);
 $pdf->Cell(104);
 $pdf->Cell(88,8, $leyenda,0,1,'C',1);
 $pdf->Ln(2);
@@ -148,16 +149,16 @@ $pdf->Ln(5);
 $pdf->SetFont('Arial', '', 12);
 $pdf->MultiCell(192, 5, "Colores: \n" . $aux, 1, 'L');
 
-$pdf->Ln(8);
-$pdf->Cell(97);
-$pdf->Cell(30,8, 'Precio Unitario:',1,0,'C',1);
-$pdf->Cell(65,8, "$ " . $res['precio'],1,1,'C',0);
+// $pdf->Ln(8);
+// $pdf->Cell(97);
+// $pdf->Cell(30,8, 'Precio Unitario:',1,0,'C',1);
+// $pdf->Cell(65,8, "$ " . $res['precio'],1,1,'C',0);
 
-$pdf->Ln(2);
-$pdf->Cell(97);
-$pdf->Cell(30,8, 'Precio Final:',1,0,'C',1);
-$pdf->SetFont('Arial', 'B', 16);
-$pdf->Cell(65,8, "$ " . $res['piezas'] * $res['precio'],1,1,'C',0);
+// $pdf->Ln(2);
+// $pdf->Cell(97);
+// $pdf->Cell(30,8, 'Precio Final:',1,0,'C',1);
+// $pdf->SetFont('Arial', 'B', 16);
+// $pdf->Cell(65,8, "$ " . $res['piezas'] * $res['precio'],1,1,'C',0);
 
 $pdf->Output();
 

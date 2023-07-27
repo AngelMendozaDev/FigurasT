@@ -12,14 +12,14 @@ if (!isset($_SESSION['ID']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_SESSION['name']; ?></title>
     <link rel="icon" href="../../resources/imgs/logo/Logo.png">
-    <link rel="stylesheet" href="../../resources/css/style.css">
     <link rel="stylesheet" href="../../resources/libs/bootstrap_5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../resources/libs/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../../resources/libs/datatable/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="../../resources/libs/datatable/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="../../resources/css/menus.css">
     <link rel="stylesheet" href="../../resources/css/inicio.css">
     <link rel="stylesheet" href="../../resources/css/general.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <link rel="stylesheet" href="../../resources/libs/datatable/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../../resources/libs/datatable/css/buttons.dataTables.min.css">
 </head>
 
 <body>
@@ -39,20 +39,20 @@ if (!isset($_SESSION['ID']))
                 <a href="inicio.php"><span class="fa fa-home mr-3"></span> Inicio</a>
             </li>
             <li>
-                <a href="cotizaciones.php"><i class="fas fa-file-signature mr-3"></i> Generar Cotización</a>
+                <a href="cotizaciones.php"><i class="fas fa-file-signature mr-3"></i> Cotizaciónes</a>
             </li>
             <li>
-                <a href="history.php"><span class="fa fa-list mr-3"></span> Mis Cotizaciones</a>
+                <a href="history.php"><span class="fa fa-list mr-3"></span> Pedidos</a>
             </li>
             <li>
-                <a href="#"><span class="fa fa-trophy mr-3"></span> Mis Pedidos</a>
+                <a href="#"><span class="fa fa-trophy mr-3"></span> Personal</a>
             </li>
             <li>
-                <a href="info.php"><span class="fa fa-cog mr-3"></span> Mis Datos</a>
+                <a href="#"><span class="fa fa-cog mr-3"></span> Mi información</a>
             <li>
-            <!-- <li>
+            <li>
                 <a href="#"><span class="fas fa-headset mr-3"></span> Soporte Técnico</a>
-            </li> -->
+            </li>
             <li>
                 <a href="../../controllers/close.php"><span class="fa fa-sign-out mr-3"></span> Cerrar Sesión</a>
             </li>

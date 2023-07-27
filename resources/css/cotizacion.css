@@ -4,14 +4,6 @@
     box-sizing: border-box;
 }
 
-.campo {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-.campo::placeholder {
-    color: rgba(0, 0, 0, 0.3);
-}
-
 .groupT {
     margin: auto;
     width: 10rem;

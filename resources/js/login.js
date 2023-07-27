@@ -27,15 +27,17 @@ function setLogin() {
     type: "POST",
     data: $("#form-log").serialize(),
     success: function (response) {
-      //console.log(response)
-      if (response.trim() == 1) {
+      console.log(response);
+      if (response.trim() == 2) {
         window.location.href = "templates/user/inicio.php";
+      } else if (response.trim() == 1) {
+        window.location.href = "templates/admin/inicio.php";
       } else {
         swal("Opps!", "Usuario/contraseña Erroneos", "info").then((value) => {
           $("#form-log")[0].reset();
         });
       }
-    }
+    },
   });
   return false;
 }

@@ -83,9 +83,9 @@ $flag = false;
                             <!--d-block mb-1
 d-block mb-1
 d-block mb-1-->
-                            <a class="btn btn-warning btn-small" href="#" target="_blank">
+                            <!-- <a class="btn btn-warning btn-small" href="#" target="_blank">
                                 <i class="fas fa-shopping-cart"></i>
-                            </a>
+                            </a> -->
                             <a class="btn btn-success btn-small" href="tel:+525564477055" target="_blank">
                                 <i class="fas fa-phone"></i>
                             </a>

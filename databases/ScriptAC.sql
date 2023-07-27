@@ -22,14 +22,6 @@ CREATE TABLE usuarios(
     primary key(ID_user)
 );
 
-CREATE TABLE domicilio(
-	ID_domicilio int not null,
-    calle varchar(80) not null,
-    cp int not null,
-    primary key(ID_domicilio),
-    foreign key(ID_domicilio) references usuarios(ID_user)
-);
-
 CREATE TABLE presupuestos(
 	folio_pres int auto_increment not null,
     fecha_pres datetime default now(),
@@ -74,4 +66,25 @@ CREATE TABLE notificaciones(
     leido int not null,
     primary key(id_not),
     foreign key (user_destination) references usuarios(ID_user)
+);
+
+
+CREATE TABLE cp_mun(
+    clave int auto_increment not null,
+    cp varchar(6) not null,
+    colonia varchar(60) not null,
+    municipio varchar(40) not null,
+    estado varchar(30) not null,
+    primary key(clave)
+);
+
+CREATE TABLE domicilio(
+	folio_domicilio int auto_increment not null,
+    fk_user int not null,
+    calle varchar(80) not null,
+    cp int not null,
+    referencia varchar(160) not null,
+    primary key(folio_domicilio),
+    foreign key(fk_user) references usuarios(ID_user),
+    foreign key(cp) references cp_mun(clave)
 );

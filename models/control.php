@@ -4,14 +4,14 @@ class Control{
     public function conexion(){
         $host = "localhost";
         $user = "root";
-        $pass = "";
+        $pass = "LuisA5841@&";
         $db = "figuras";
 
         $conexion = mysqli_connect($host, $user, $pass, $db);
         if(!$conexion)
             return null;
 
-        mysqli_set_charset($conexion, "utf-8");
+        mysqli_set_charset($conexion,'utf8');
         return $conexion;
     }
 
@@ -62,7 +62,7 @@ class Control{
                 $res = $res->fetch_assoc();
                 $_SESSION['ID'] = $res['ID_user'];
                 $_SESSION['name'] = $res['nombre']." ".$res['app'];
-                return 1;
+                return $res['tipo'];
             }
         }
         return 0;
