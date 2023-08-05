@@ -1,0 +1,13 @@
+.cont-table{
+    width: 100%;
+}
+
+
+@media (max-width: 700px){
+    .cont-table{
+        overflow-x: scroll;
+    }
+    .cont-table::-webkit-scrollbar{
+        display: none;
+    }
+}

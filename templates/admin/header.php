@@ -12,14 +12,16 @@ if (!isset($_SESSION['ID']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_SESSION['name']; ?></title>
     <link rel="icon" href="../../resources/imgs/logo/Logo.png">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <link rel="stylesheet" href="../../resources/libs/datatable/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../../resources/libs/datatable/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="../../resources/libs/bootstrap_5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../resources/libs/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../../resources/css/menus.css">
     <link rel="stylesheet" href="../../resources/css/inicio.css">
     <link rel="stylesheet" href="../../resources/css/general.css">
-    <link rel="stylesheet" href="../../resources/css/style.css">
-    <link rel="stylesheet" href="../../resources/libs/datatable/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="../../resources/libs/datatable/css/buttons.dataTables.min.css">
+
+
 </head>
 
 <body>

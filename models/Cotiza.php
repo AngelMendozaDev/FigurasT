@@ -52,10 +52,11 @@ class Cotiza extends Control
     }
 
 
-    public function getCotizaciones($user){
+    public function getCotizaciones($user)
+    {
         $con = Control::conexion();
         $query = $con->prepare("SELECT p.folio_pres, p.fecha_pres, p.piezas, p.precio FROM presupuestos AS p WHERE p.solicito = ? ORDER BY p.fecha_pres DESC");
-        $query->bind_param('s',$user);
+        $query->bind_param('s', $user);
         $query->execute();
         $res = $query->get_result();
 
@@ -64,10 +65,11 @@ class Cotiza extends Control
         return $res;
     }
 
-    public function getCotizacin($ID){
+    public function getCotizacin($ID)
+    {
         $con = Control::conexion();
         $query = $con->prepare("SELECT p.*, u.nombre, u.app, u.apm FROM presupuestos AS p INNER JOIN usuarios AS u ON u.ID_user = p.solicito WHERE p.folio_pres = ?");
-        $query->bind_param('s',$ID);
+        $query->bind_param('s', $ID);
         $query->execute();
         $res = $query->get_result();
 
@@ -76,4 +78,17 @@ class Cotiza extends Control
         return $res;
     }
 
+    public function getCotiza($estado)
+    {
+        $con = Control::conexion();
+        if ($estado == 0) {
+            $query = $con->prepare("SELECT p.*, u.nombre, u.app, u.apm, u.telefono, u.mail FROM presupuestos AS p INNER JOIN usuarios AS u ON u.ID_user = p.solicito WHERE p.precio = 0 ORDER BY p.fecha_pres ASC");
+        }
+        $query->execute();
+        $res = $query->get_result();
+
+        $query->close();
+
+        return $res;
+    }
 }

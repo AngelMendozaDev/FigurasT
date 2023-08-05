@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Publivolumetricos</title>
     <link rel="icon" href="resources/imgs/logo/Logo.png">
     <link rel="stylesheet" href="resources/libs/bootstrap_5/css/bootstrap.min.css">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="resources/css/inicio.css">
     <link rel="stylesheet" href="resources/css/general.css">
     <link rel="stylesheet" href="resources/css/gallery.css">
+    <link rel="stylesheet" href="resources/css/gal.css">
 </head>
 
 <body>
@@ -76,13 +77,17 @@
 
             <hr width="70%">
         </center>
+    </div>
 
-        <div class="gallery-container" id="lienzo">
-            <?php for ($i = 1; $i <= 21; $i++) { ?>
-                <div class="gallery__item">
-                    <img src="resources/imgs/Fig/<?php echo $i; ?>.jpg" alt="" class="gallery__img">
-                </div>
-            <?php } ?>
+    <div class="container">
+        <div class="row">
+            <div class="gallery" id="gallery">
+                <?php for ($i = 1; $i < 32; $i++) { ?>
+                    <div class="gallery-item">
+                        <div class="content"><img src="resources/imgs/Fig/<?php echo $i; ?>.jpg" alt=""></div>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
 
@@ -119,6 +124,9 @@
             </div>
         </footer>
     </main>
+
+    <script src="resources/js/gal.js"></script>
+
 </body>
 
 </html>

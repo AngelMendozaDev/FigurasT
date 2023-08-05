@@ -5,7 +5,6 @@ $model = new User();
 
 $data = $model->getInfo($_SESSION['ID'])->fetch_assoc();
 $res = $model->getDomicilio($_SESSION['ID']);
-
 ?>
 
 <div class="container">
@@ -79,19 +78,21 @@ $res = $model->getDomicilio($_SESSION['ID']);
         </div>
     </div>
 
-        <div class="row mb-5">
-            <div class="col-12 mx-auto">
-                <?php while($dom = $res->fetch_assoc()){ ?>
-                <div class="input-group mt-3">
-                    <textarea class="form-control h-100 " cols="30" rows="3"><?php echo $dom['calle'] . ", " . $dom['colonia'] . ", " . $dom['cp'] . ", " . $dom['estado'] . ", " . $dom['municipio'] . ".\n" . $dom['referencia'] ?>
+    <div class="row mb-5">
+        <div class="col-12 mx-auto">
+            <?php if ($res != -1) {
+                while ($dom = $res->fetch_assoc()) { ?>
+                    <div class="input-group mt-3">
+                        <textarea class="form-control h-100 " cols="30" rows="3"><?php echo $dom['calle'] . ", " . $dom['colonia'] . ", " . $dom['cp'] . ", " . $dom['estado'] . ", " . $dom['municipio'] . ".\n" . $dom['referencia'] ?>
                     </textarea>
-                    <button class="btn btn-small btn-danger">
-                        <i class="fa fa-times-circle" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <?php } ?>
-            </div>
+                        <button class="btn btn-small btn-danger">
+                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                        </button>
+                    </div>
+            <?php }
+            } ?>
         </div>
+    </div>
 
 
 </div>
