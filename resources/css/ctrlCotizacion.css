@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+#tabla tr td{
+vertical-align: middle;
+}
+
 
 @media (max-width: 700px){
     .cont-table{

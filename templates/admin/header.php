@@ -41,10 +41,10 @@ if (!isset($_SESSION['ID']))
                 <a href="inicio.php"><span class="fa fa-home mr-3"></span> Inicio</a>
             </li>
             <li>
-                <a href="cotizaciones.php"><i class="fas fa-file-signature mr-3"></i> Cotizaciónes</a>
+                <a href="cotizaciones.php"><i class="fas fa-file-signature mr-3"></i> Cotizaciónes por atender</a>
             </li>
             <li>
-                <a href="history.php"><span class="fa fa-list mr-3"></span> Pedidos</a>
+                <a href="ctrlCotiza.php"><span class="fa fa-list mr-3"></span> Control de cotizaciones </a>
             </li>
             <li>
                 <a href="#"><span class="fa fa-trophy mr-3"></span> Personal</a>

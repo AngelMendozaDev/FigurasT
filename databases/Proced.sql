@@ -46,3 +46,17 @@ begin
 INSERT INTO domicilio (fk_user, calle, cp, referencia) VALUES (us,UPPER(street), clave, UPPER(ref));
 end
 $
+
+
+
+
+DELIMITER $
+CREATE PROCEDURE setPrice(
+    in pres int,
+    in fecha date,
+    in price decimal(7,2)
+)
+begin
+    INSERT INTO pedido(presu, entrega, estado, total) values (pres,fecha,'1',price);
+end
+$

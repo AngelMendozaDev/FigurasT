@@ -84,11 +84,25 @@ class Cotiza extends Control
         if ($estado == 0) {
             $query = $con->prepare("SELECT p.*, u.nombre, u.app, u.apm, u.telefono, u.mail FROM presupuestos AS p INNER JOIN usuarios AS u ON u.ID_user = p.solicito WHERE p.precio = 0 ORDER BY p.fecha_pres ASC");
         }
+        if ($estado == 0) {
+            $query = $con->prepare("SELECT p.*, u.nombre, u.app, u.apm, u.telefono, u.mail FROM presupuestos AS p INNER JOIN usuarios AS u ON u.ID_user = p.solicito WHERE p.precio = 0 ORDER BY p.fecha_pres ASC");
+        }
         $query->execute();
         $res = $query->get_result();
 
         $query->close();
 
         return $res;
+    }
+
+    public function setPrice($price, $pres, $fecha){
+        $con = Control::conexion();
+        $query = $con->prepare("CALL setPrice(?,?,?)");
+        $query->bind_param('sss', $pres, $fecha, $price);
+        $response = $query->execute();
+
+        $query->close();
+
+        return $response;
     }
 }
